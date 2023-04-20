@@ -16,6 +16,7 @@ strategies, which seek to profit from mispricings in the market using
 quantitative models.
 2. Develop defensive portfolio optimization strategies which seek to optimize the
 portfolio using mathematical models.<br>
+
 B. Machine Learning models
 1. The Multiple Model-based Strategies iterate through most sci-kit-learn
 models, with the comparison of classifiers and regressors predictions. With
@@ -31,6 +32,7 @@ decisions based on market conditions and investor preferences.
 4. Develop and test RNN-based portfolio optimization strategies, which leverage
 temporal dependencies in financial data to optimize portfolio allocations and
 maximize returns.<br>
+
 C. Software Development
 1. Build a Trading Server as an order management system to handle orders
 placed by different models
@@ -38,6 +40,7 @@ placed by different models
 user interface
 3. Develop a user interface for simple user control of adding models and
 monitoring model performance<br>
+
 Through these objectives, we aim to design and develop a comprehensive trading
 system that incorporates multiple machine-learning techniques and can effectively
 generate trading signals for a range of financial markets.
