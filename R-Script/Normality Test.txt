@@ -1,0 +1,72 @@
+install.packages('quantmod')
+install.packages("xts")
+install.packages("ggplot2")
+install.packages("gridExtra")
+install.packages("seastests")
+install.packages("ggplot")
+install.packages("TTR")
+install.packages("car")
+install.packages("AER")
+install.packages("dynlm")
+install.packages("tseries")
+install.packages("dplyr")
+install.packages("ggpubr")
+
+
+library(quantmod)
+library(xts)
+library(ggplot2)
+library(gridExtra)
+library(seastests)
+library(TTR)
+library(stats)
+library(car)
+library(dynlm)
+library(AER)
+library(tseries)
+library(dplyr)
+library("ggpubr")
+
+
+options(max.print=10)
+
+symbolBasket <- c('SPY')
+set.seed(104)
+getSymbols(symbolBasket , src='yahoo')
+
+#### Absolute Change
+
+SPY$Diff<-diff(SPY$SPY.Adjusted)
+
+
+#### Percentage Change
+percentage<-c()
+
+for(i in 2:nrow(SPY)){
+percentage<-append(percentage,SPY$SPY.Adjusted[[i]]/SPY$SPY.Adjusted[[i-1]]-1)
+}
+SPY<-SPY[-1]
+SPY$percentage<-percentage
+
+
+#### Sharpio Test on percentage change
+shapiro.test(percentage)
+
+### Absolute value Test
+
+Absolute<-c()
+for(i in 1:nrow(SPY)){
+Absolute<-append(Absolute,SPY$SPY.Adjusted[[i]])
+}
+
+shapiro.test(Absolute)
+
+
+#### Density and QQ Plot
+
+ggdensity(percentage, 
+          main = "Density plot of Percentage change of SPY",
+          xlab = "SPY Percentage change")
+
+ggqqplot(percentage)
+
