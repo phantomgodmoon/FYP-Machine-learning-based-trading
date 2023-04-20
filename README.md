@@ -44,3 +44,5 @@ monitoring model performance<br>
 Through these objectives, we aim to design and develop a comprehensive trading
 system that incorporates multiple machine-learning techniques and can effectively
 generate trading signals for a range of financial markets.
+
+![Poster Presentation](https://user-images.githubusercontent.com/68416360/233396657-276f8451-aedb-41ee-b912-be6a45259870.png)
